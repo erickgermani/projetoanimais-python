@@ -12,11 +12,19 @@ class GerenciarEspecie:
         for e in lista_de_especies:
             print(e)
 
-    def removerEspecie(lista_de_especies):
+    def removerEspecie(lista_de_especies, lista_de_animais):
         GerenciarEspecie.exibirEspecie(lista_de_especies)
         id = int(input('Digite o ID da espécie que deseja remover: '))
         resposta = GerenciarEspecie.procurarEspecie(id, lista_de_especies)
         if(type(resposta) == int):
+            lista_de_remocao = []
+            x = 0
+            for a in lista_de_animais:
+                if(a.especie == lista_de_especies[resposta]):
+                    lista_de_remocao.append(x)
+                x += 1
+            for r in lista_de_remocao:
+                lista_de_animais.pop(r)
             lista_de_especies.pop(resposta)
         else:
             print(resposta)

@@ -27,7 +27,7 @@ while(continuar == True):
         lista_de_animais.append(GerenciarAnimal.criarAnimal(lista_de_especies, animal = False))
 
     elif (escolha == 5):
-        GerenciarEspecie.removerEspecie(lista_de_especies)
+        GerenciarEspecie.removerEspecie(lista_de_especies, lista_de_animais)
 
     elif (escolha == 6):
         GerenciarAnimal.removerAnimal(lista_de_animais)
